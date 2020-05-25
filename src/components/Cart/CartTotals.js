@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PayPalButton from "../payPalButton";
 
-const CartTotals = ({ values }) => {
+const CartTotals = ({ values, history }) => {
   const { cartSubTotal, cartTax, cartTotal, clearCart } = values;
   return (
     <div className="container">
@@ -28,6 +29,7 @@ const CartTotals = ({ values }) => {
             <span className="text-title">total: &#8377;</span>
             <strong>{cartTotal}</strong>
           </h5>
+          <PayPalButton total={cartTotal} clearCart={clearCart} history={history}/>
         </div>
       </div>
     </div>
